@@ -1,22 +1,3 @@
-/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Key_Pressed
-/// @DnDVersion : 1
-/// @DnDHash : 15861F7A
-/// @DnDArgument : "key" "mb_left"
-var l15861F7A_0;
-l15861F7A_0 = keyboard_check_pressed(mb_left);
-if (l15861F7A_0)
-{
-	/// @DnDAction : YoYo Games.Instances.Create_Instance
-	/// @DnDVersion : 1
-	/// @DnDHash : 0B3DB269
-	/// @DnDParent : 15861F7A
-	/// @DnDArgument : "xpos_relative" "1"
-	/// @DnDArgument : "ypos_relative" "1"
-	/// @DnDArgument : "objectid" "obj_bullet"
-	/// @DnDSaveInfo : "objectid" "obj_bullet"
-	instance_create_layer(x + 0, y + 0, "Instances", obj_bullet);
-}
-
 /// @DnDAction : YoYo Games.Mouse & Keyboard.If_Key_Down
 /// @DnDVersion : 1
 /// @DnDHash : 3262BBBD
@@ -32,6 +13,23 @@ if (l3262BBBD_0)
 	/// @DnDArgument : "dir" "image_angle"
 	/// @DnDArgument : "speed" "0.1"
 	motion_add(image_angle, 0.1);
+}
+
+/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Key_Down
+/// @DnDVersion : 1
+/// @DnDHash : 2078CEDC
+/// @DnDArgument : "key" "vk_down"
+var l2078CEDC_0;
+l2078CEDC_0 = keyboard_check(vk_down);
+if (l2078CEDC_0)
+{
+	/// @DnDAction : YoYo Games.Movement.Add_Motion
+	/// @DnDVersion : 1
+	/// @DnDHash : 27D9BF60
+	/// @DnDParent : 2078CEDC
+	/// @DnDArgument : "dir" "image_angle"
+	/// @DnDArgument : "speed" "-0.1"
+	motion_add(image_angle, -0.1);
 }
 
 /// @DnDAction : YoYo Games.Mouse & Keyboard.If_Key_Down
@@ -68,6 +66,24 @@ if (l21FE3DE7_0)
 	/// @DnDArgument : "expr_relative" "1"
 	/// @DnDArgument : "var" "image_angle"
 	image_angle += -4;
+}
+
+/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Mouse_Pressed
+/// @DnDVersion : 1.1
+/// @DnDHash : 4DB68EA7
+var l4DB68EA7_0;
+l4DB68EA7_0 = mouse_check_button_pressed(mb_left);
+if (l4DB68EA7_0)
+{
+	/// @DnDAction : YoYo Games.Instances.Create_Instance
+	/// @DnDVersion : 1
+	/// @DnDHash : 0B3DB269
+	/// @DnDParent : 4DB68EA7
+	/// @DnDArgument : "xpos_relative" "1"
+	/// @DnDArgument : "ypos_relative" "1"
+	/// @DnDArgument : "objectid" "obj_bullet"
+	/// @DnDSaveInfo : "objectid" "obj_bullet"
+	instance_create_layer(x + 0, y + 0, "Instances", obj_bullet);
 }
 
 /// @DnDAction : YoYo Games.Movement.Wrap_Room
